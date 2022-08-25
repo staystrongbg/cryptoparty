@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="cryptography, crypto srbija" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta name="description" content="Zastita licnih podataka" />
+  <link href="../css/main.css" rel="stylesheet" />
+
+  <title>CryptoParty Srbija - tutoriali</title>
+</head>
+
+<body>
+  <input type="checkbox" class="checkbox-theme" id="theme-check" />
+  <div class="page-wrapper font-mono flex flex-col items-center justify-between relative min-h-screen">
+
+    <div class="nav">
+      <input type="checkbox" id="nav-check" />
+      <div class="nav-header">
+        <div class="nav-title">
+          <a href="../index.html">
+            <img src="../images/crypto-logo.svg" alt="cryto_logo" />
+          </a>
+          <label class="label" for="theme-check">
+            <div class="ball"></div>
+          </label>
+        </div>
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <a href="../index.html">
+          <i class="fa-solid fa-house"></i>
+          home
+        </a>
+        <a href="../tutoriali.html" class="active">
+          <i class="fa-solid fa-book-open"></i>
+          tutoriali
+        </a>
+        <a href="../dogadjaji.html">
+          <i class="fa-solid fa-calendar"></i>
+          dogadjaji
+        </a>
+        <a href="../o-nama.html">
+          <i class="fa-solid fa-circle-info"></i>
+          o nama
+        </a>
+        <a href="../kontakt.html">
+          <i class="fa-solid fa-address-book"></i>
+          kontakt
+        </a>
+      </div>
+    </div>
+    <!-- nav end -->
+    <section class="gap-10 main   flex flex-col items-center justify-center">
+      <div class="flex w-full xl:flex-row flex-col justify-between gap-10 items-start h-screen">
+        <div class="flex-1 flex flex-col h-full  ">
+          <h3 class="tut-title">Linuks | Šifrovanje elektronske pošte</h3>
+          <div class="w-full tut-text-container h-full overflow-scroll ">
+            <h4>Uvod</h4>
+            <p class="tutorial-text">
+              Kako bi šifrovali vašu elektronsku poštu neophodno je da imate
+              GPG (eng. Gnu Privacy Guard) program koji pruža funkcionalnosti
+              šifrovana, dešifrovanja, digitalnog potpisivanja i provere
+              digitalno potpisanih poruka.
+            </p>
+            <p class="tutorial-text">
+              Preduslov za zaštićenu razmenu elektronske pošte je da obe
+              strane koriste GPG.
+            </p>
+            <p class="tutorial-text">
+              Tako da kada prođete kroz ovaj tutorijal i namestite svoje GPG
+              ključeve bićete u mogućnosti da razmenjujete šifronu poštu samo
+              sa osobama koje takođe poseduju i koriste GPG, nezavisno od mejl
+              provajdera, mejl protokola i operativnog sistema.
+            </p>
+            <p class="tutorial-text">
+              Na većini GNU/Linuks operativnih sistema GPG program je
+              podrazumevano uključen uz softver koji se instalira zajedno sa
+              operatvnim sistemom, tako da instalacija najverovatnije GPG-a
+              nije potrebna.
+            </p>
+            <p class="tutorial-text">
+              Treba napomenuti i da je GPG program koji se pokreće iz
+              terminala, ali postoje programi koji pružaju grafički korisnički
+              interfejs (više na sajtu GPG-a). Da bi proverili da li vaš
+              GNU/Linuks ima GPG instaliran samo u terminalu otkucajte:
+            <div class="code-block">
+              $ gpg --version
+            </div>
+            <p class="tutorial-text">ili</p>
+            <div class="code-block">
+              $ gpg2 --version
+            </div>
+            <p class="tutorial-text"> i prikazaće se verzija GPG-a kao i algoritmi
+              koje podržava.</p>
+            </p>
+            <img src="../images/linux/01.png" alt="">
+            <p class="slika-detalji">
+              Figure 1: Verzije 1.4 i 2.1 GPG-a koje su došle instalirane zajedno sa Ubuntu 16.04 operativnim sistemom.
+            </p>
+            <p class="tutorial-text">
+              Ukoliko ipak nemate GPG instaliran to možete učiniti komandom:
+            </p>
+            <div class="code-block">
+              # apt-get install gpg
+            </div>
+            <p class="tutorial-text">
+              Pored GPG-a, potrebni su vam i klijent elektronske pošte kao i dodatak mejl klijentu
+              koji za vas barata GPG ključevima tj. olakšava korišćenje GPG-a kroz
+              integrisani grafički korisnički interfejs unutar Thunderbird mejl
+              klijenta
+            </p>
+            <p class="tutorial-text">
+              Početnicima preporučujemo Thunderbird kao mejl klijenta jer je jednostavan za korišćenje, čiju instalaciju
+              i podešavanja objašnjavamo u ovom tutorijalu.
+              Thunderbird podržava Enigmail dodatak koji se
+              oslanja na GPG i pruža jednostavan interfejs između mejl klijenta i
+              GPG-a. Alternativni mejl klijenti su: Claws Mail, KMail, Evolution, kao i drugi, za više informacija
+              posetite sajt GPG-a.
+            </p>
+            <h4>2. Instalacija Thunderbird-a</h4>
+            <p class="tutorial-text">
+              Instaliranje Thunderbird-a možete obaviti na najmanje dva načina:
+              1. preuzimanjem preograma sa zvaničnog sajta,
+            </p>
+            <img src="../images/linux/02.png" alt="thunderbird">
+            <p class="slika-detalji">
+              Figure 2:Preuzmite Thunderbird za GNU/linuks.
+            </p>
+            <p class="tutorial-text">
+
+              2. ili direktno iz terminala komandom.
+            </p>
+            <div class="code-block">
+
+              # apt-get install Thunderbird
+            </div>
+            <p class="tutorial-text">
+
+              za distribucije zasnovane na Debian-u.
+            </p>
+            <h4>3. Podešavanje Thunderbird-a</h4>
+            <img src="../images/linux/03.png" alt="thunderbird">
+
+            <p class="slika-detalji">
+              Figure 3: Prvo pokretanje thunderbird-a. Izaberite opciju korišćenja već postojeće mejl adrese.
+            </p>
+            <p class="tutorial-text">
+              Predpostavlja se da već imate mejl adresu
+              koju koristite, i za koju želite da generišete GPG ključeve za zaštitu
+              privatnosti poruka koje razmenjujete.
+            </p>
+            <p class="tutorial-text">
+              Posle čega treba da podesite mejl adresu,
+              šifru za pristup toj mej adresi, kao i protokol za razmenu pošte između
+              servera mejl provajdera i vašeg lokalnog mejl kljijenta
+            </p>
+            <img src="../images/linux/04.png" alt="thunderbird">
+            <p class="slika-detalji">
+              Figure 4: Izaberite IMAP ili POP3 u zavisnosti da li želite da čuvate poštu i na vašem računaru.
+            </p>
+            <img src="../images/linux/05.png" alt="thunderbird">
+            <p class="slika-detalji">
+              Figure 5: Zavisno od mejl
+              provajdera, može biti tražena dozvola za korišćenje klijenta za pristup
+              vašem mejl nalogu. Ako ne dobijete ovaj prozor, niste ništa pogrešili.
+            </p>
+            <p class="tutorial-text">Što se podešavanja mejl naloga, to bi bilo
+              sve. Sada će vam se mejl klijent sinhronizovati sa mejl serverom i po
+              potrebi preuzeti nove poruke. </p>
+
+            <img src="../images/linux/06.png" alt="thunderbird">
+            <p class="slika-detalji">
+              Figure 6: Funkcionalan mejl klijent.</p>
+            <h4>4. Instaliranje Enigmail-a</h4>
+            <p class="tutorial-text">
+              Sada je potrebno da generišemo ključeve za našu mejl adresu.
+            </p>
+            <p class="tutorial-text">
+              To možemo uraditi i iz terminala koristeći GPG, ali je za početnike bolje da to urade kroz Thunderbird-ov
+              dodatak
+              Enigmail.
+            </p>
+            <img src="../images/linux/07.png" alt="thunderbird">
+            <p class="slika-detalji">
+              Figure 7: Da bi instalirali Enigmail potrebo je da u Thunderbird-u izaberete opciju za dodatke (eng.
+              Add-ons).</p>
+            <img src="../images/linux/08.png" alt="thunderbird">
+            <p class="slika-detalji">
+              Figure 8: U polju za pretragu dodataka unesite "Enigmail".</p>
+
+            <img src="../images/linux/09.png" alt="thunderbird">
+            <p class="slika-detalji">
+              Figure 9: Instalirajte najnoviju verziju Enigmail-a i restartujte Thunderbird.</p>
+
+            <h4>5. Kreiranje ključeva kroz Enigmail</h4>
+
+            <img src="../images/linux/10.png" alt="thunderbird">
+            <p class="slika-detalji">
+              Figure 10: Kada se Enigmail
+              restartuje, automatski će se pokrenuti čarobnjak (eng. Wizard). Ukoliko
+              se sam ne pokrene možete ga i ručno pokrenuti iz Opcije
+              "Enigmail">"Setup Wizard"</p>
+
+          </div>
+        </div>
+        <!-- <div class="h-full w-[1px] bg-black"></div> -->
+        <div class="flex-1 flex flex-col">
+          <h3>objasnjenje</h3>
+          <div class="w-full  overflow-scroll"></div>
+        </div>
+      </div>
+    </section>
+    <!-- main section end -->
+    <footer class="footer w-full text-center py-2">
+      Copyleft &copy; cryptoparty.rs 2022
+    </footer>
+  </div>
+</body>
+
+</html>
