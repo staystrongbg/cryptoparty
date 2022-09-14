@@ -4,7 +4,8 @@
 -src
 --images
 ----linux
-\\ ove foldere ispod treba napraviti i u njih spakovati slike
+
+[comment]: <> (ove foldere ispod treba napraviti i u njih spakovati slike)
 ----win
 ----ios
 ----android
