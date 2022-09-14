@@ -5,7 +5,7 @@
 --images
 ----linux
 
-(ove foldere ispod treba napraviti i u njih spakovati slike)
+(ova tri foldera ispod treba napraviti i u njih spakovati slike)
 ----win
 ----ios
 ----android
