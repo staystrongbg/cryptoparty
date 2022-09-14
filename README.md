@@ -5,7 +5,7 @@
 --images
 ----linux
 
-[comment]: <> (ove foldere ispod treba napraviti i u njih spakovati slike)
+<> (ove foldere ispod treba napraviti i u njih spakovati slike)
 ----win
 ----ios
 ----android
