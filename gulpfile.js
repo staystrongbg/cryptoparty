@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 const cleanCSS = require('gulp-clean-css');
-
+const autoPrefixer = require('gulp-autoprefixer');
 // 1.
 //copyhtml to dist
 gulp.task('copyHtml', (cb) => {
@@ -19,7 +19,15 @@ gulp.task('imageMin', () =>
 //minify css
 gulp.task('minify-css', () => {
   return gulp
-    .src('dist/*.css')
+    .src('dist/**/*.css')
     .pipe(cleanCSS({ compatibility: 'ie8' }))
     .pipe(gulp.dest('dist'));
+});
+
+//postCSS/autoprefixer
+gulp.task('autoprefixer', () => {
+  return gulp
+    .src('src/**/*.css')
+    .pipe(autoPrefixer({ cascade: false }))
+    .pipe(gulp.dest('dist/css'));
 });
