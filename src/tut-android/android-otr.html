@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="cryptography, crypto srbija" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta name="description" content="Zastita licnih podataka" />
+  <link href="../css/main.css" rel="stylesheet" />
+
+  <title>CryptoParty Srbija - tutoriali</title>
+</head>
+
+<body>
+  <input type="checkbox" class="checkbox-theme" id="theme-check" />
+  <div class="page-wrapper font-mono flex flex-col items-center justify-between relative min-h-screen">
+
+    <div class="nav">
+      <input type="checkbox" id="nav-check" />
+      <div class="nav-header">
+        <div class="nav-title">
+          <a href="../index.html">
+            <img src="../images/crypto-logo.svg" alt="cryto_logo" />
+          </a>
+          <label class="label" for="theme-check">
+            <div class="ball"></div>
+          </label>
+        </div>
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <a href="../index.html">
+          <i class="fa-solid fa-house"></i>
+          home
+        </a>
+        <a href="../tutoriali.html" class="active">
+          <i class="fa-solid fa-book-open"></i>
+          tutoriali
+        </a>
+        <a href="../dogadjaji.html">
+          <i class="fa-solid fa-calendar"></i>
+          dogadjaji
+        </a>
+        <a href="../o-nama.html">
+          <i class="fa-solid fa-circle-info"></i>
+          o nama
+        </a>
+        <a href="../kontakt.html">
+          <i class="fa-solid fa-address-book"></i>
+          kontakt
+        </a>
+      </div>
+    </div>
+    <!-- nav end -->
+    <section class="gap-10 main  flex flex-col items-center justify-center">
+      <div id="dd">
+        <a href="#" id="button">Sadrzaj</a>
+        <ul>
+          <li><a href="#uvod">Uvod</a></li>
+          <li><a href="#Instalacija Thunderbird-a">Instalacija Thunderbird-a</a> </li>
+          <li><a href="#Podešavanje Thunderbird-a">Podešavanje Thunderbird-a</a></li>
+          <li><a href="#Instaliranje Enigmail-a">Instaliranje Enigmail-a</a></li>
+          <li><a href="#Kreiranje ključeva kroz Enigmail">Kreiranje ključeva kroz Enigmail</a></li>
+          <li><a href="#Objavljivanje vašeg javnog ključa">Objavljivanje vašeg javnog ključa</a></li>
+          <li><a href="#Saznajte na koji server ste poslali ključ:">Saznajte na koji server ste poslali ključ</a>
+          </li>
+          <li>
+            <a href="#Proverite gde je ključ iz internet pretraživača">Proverite gde je ključ iz internet
+              pretraživača</a>
+          </li>
+          <li>Razmena šifrovanih poruka</li>
+          <li>Slanje šifrovanih mejlova</li>
+          <li>Primanje šifrovanih mejlova</li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="flex w-full  justify-center gap-10 items-start h-screen">
+        <aside class="flex-[1 50%] flex flex-col h-full aside">
+          <!-- <h3 class="tut-title">Sadrzaj</h3> -->
+
+          <div class="w-full h-full overflow-scroll  ">
+            <ol class="flex flex-col p-6 gap-2 podnaslovi">
+              <h4 class="uppercase font-bold naslov-tutoriala">Tutorial</h4>
+              <li><a href="#uvod">Uvod</a></li>
+              <li><a href="#Instalacija Thunderbird-a">Instalacija Thunderbird-a</a> </li>
+              <li><a href="#Podešavanje Thunderbird-a">Podešavanje Thunderbird-a</a></li>
+              <li><a href="#Instaliranje Enigmail-a">Instaliranje Enigmail-a</a></li>
+              <li><a href="#Kreiranje ključeva kroz Enigmail">Kreiranje ključeva kroz Enigmail</a></li>
+              <li><a href="#Objavljivanje vašeg javnog ključa">Objavljivanje vašeg javnog ključa</a></li>
+              <li><a href="#Saznajte na koji server ste poslali ključ:">Saznajte na koji server ste poslali ključ:</a>
+              </li>
+              <li><a href="#Proverite gde je ključ iz internet pretraživača">Proverite gde je ključ iz internet
+                  pretraživača</a></li>
+              <li><a href="#Razmena šifrovanih poruka">Razmena šifrovanih poruka</a></li>
+              <li><a href="#Slanje šifrovanih mejlova">Slanje šifrovanih mejlova</a></li>
+              <li><a href="#Primanje šifrovanih mejlova">Primanje šifrovanih mejlova</a></li>
+              <li></li>
+              <li></li>
+            </ol>
+
+          </div>
+        </aside>
+
+        <div class="flex-[2 80%]  flex flex-col h-full  ">
+          <h3 class="tut-title">Linuks | Šifrovanje elektronske pošte</h3>
+          <div class="w-full tut-text-container h-full overflow-scroll ">
+            <h4 id="uvod">1. Uvod</h4>
+            <p class="tutorial-text">
+              Kako bi šifrovali vašu elektronsku poštu neophodno je da imate
+              GPG (eng. Gnu Privacy Guard) program koji pruža funkcionalnosti
+              šifrovana, dešifrovanja, digitalnog potpisivanja i provere
+              digitalno potpisanih poruka.
+            </p>
+            <p class="tutorial-text">
+              Preduslov za zaštićenu razmenu elektronske pošte je da obe
+              strane koriste GPG.
+            </p>
+            <p class="tutorial-text">
+              Tako da kada prođete kroz ovaj tutorijal i namestite svoje GPG
+              ključeve bićete u mogućnosti da razmenjujete šifronu poštu samo
+              sa osobama koje takođe poseduju i koriste GPG, nezavisno od mejl
+              provajdera, mejl protokola i operativnog sistema.
+            </p>
+            <p class="tutorial-text">
+              Na većini GNU/Linuks operativnih sistema GPG program je
+              podrazumevano uključen uz softver koji se instalira zajedno sa
+              operatvnim sistemom, tako da instalacija najverovatnije GPG-a
+              nije potrebna.
+            </p>
+            <p class="tutorial-text">
+              Treba napomenuti i da je GPG program koji se pokreće iz
+              terminala, ali postoje programi koji pružaju grafički korisnički
+              interfejs (više na sajtu GPG-a). Da bi proverili da li vaš
+              GNU/Linuks ima GPG instaliran samo u terminalu otkucajte:
+            <div class="code-block">
+              $ gpg --version
+            </div>
+            <p class="tutorial-text">ili</p>
+            <div class="code-block">
+              $ gpg2 --version
+            </div>
+            <p class="tutorial-text"> i prikazaće se verzija GPG-a kao i algoritmi
+              koje podržava.</p>
+            </p>
+            <img src="../images/linux/01.png" alt="">
+            <p class="slika-detalji">
+              Figure 1: Verzije 1.4 i 2.1 GPG-a koje su došle instalirane zajedno sa Ubuntu 16.04 operativnim sistemom.
+            </p>
+            <p class="tutorial-text">
+              Ukoliko ipak nemate GPG instaliran to možete učiniti komandom:
+            </p>
+            <div class="code-block">
+              # apt-get install gpg
+            </div>
+            <p class="tutorial-text">
+              Pored GPG-a, potrebni su vam i klijent elektronske pošte kao i dodatak mejl klijentu
+              koji za vas barata GPG ključevima tj. olakšava korišćenje GPG-a kroz
+              integrisani grafički korisnički interfejs unutar Thunderbird mejl
+              klijenta
+            </p>
+            <p class="tutorial-text">
+              Početnicima preporučujemo Thunderbird kao mejl klijenta jer je jednostavan za korišćenje, čiju instalaciju
+              i podešavanja objašnjavamo u ovom tutorijalu.
+              Thunderbird podržava Enigmail dodatak koji se
+              oslanja na GPG i pruža jednostavan interfejs između mejl klijenta i
+              GPG-a. Alternativni mejl klijenti su: Claws Mail, KMail, Evolution, kao i drugi, za više informacija
+              posetite sajt GPG-a.
+            </p>
+            <h4 id="Instalacija Thunderbird-a">2. Instalacija Thunderbird-a</h4>
+            <p class="tutorial-text">
+              Instaliranje Thunderbird-a možete obaviti na najmanje dva načina:
+              1. preuzimanjem preograma sa zvaničnog sajta,
+            </p>
+            <img src="../images/linux/02.png" alt="thunderbird">
+            <p class="slika-detalji">
+              Figure 2:Preuzmite Thunderbird za GNU/linuks.
+            </p>
+            <p class="tutorial-text">
+
+              2. ili direktno iz terminala komandom.
+            </p>
+            <div class="code-block">
+
+              # apt-get install Thunderbird
+            </div>
+            <p class="tutorial-text">
+
+              za distribucije zasnovane na Debian-u.
+            </p>
+            <h4 id="Podešavanje Thunderbird-a">3. Podešavanje Thunderbird-a</h4>
+            <img src="../images/linux/03.png" alt="thunderbird">
+
+            <p class="slika-detalji">
+              Figure 3: Prvo pokretanje thunderbird-a. Izaberite opciju korišćenja već postojeće mejl adrese.
+            </p>
+            <p class="tutorial-text">
+              Predpostavlja se da već imate mejl adresu
+              koju koristite, i za koju želite da generišete GPG ključeve za zaštitu
+              privatnosti poruka koje razmenjujete.
+            </p>
+            <p class="tutorial-text">
+              Posle čega treba da podesite mejl adresu,
+              šifru za pristup toj mej adresi, kao i protokol za razmenu pošte između
+              servera mejl provajdera i vašeg lokalnog mejl kljijenta
+            </p>
+            <img src="../images/linux/04.png" alt="thunderbird">
+            <p class="slika-detalji">
+              Figure 4: Izaberite IMAP ili POP3 u zavisnosti da li želite da čuvate poštu i na vašem računaru.
+            </p>
+            <img src="../images/linux/05.png" alt="thunderbird">
+            <p class="slika-detalji">
+              Figure 5: Zavisno od mejl
+              provajdera, može biti tražena dozvola za korišćenje klijenta za pristup
+              vašem mejl nalogu. Ako ne dobijete ovaj prozor, niste ništa pogrešili.
+            </p>
+            <p class="tutorial-text">Što se podešavanja mejl naloga, to bi bilo
+              sve. Sada će vam se mejl klijent sinhronizovati sa mejl serverom i po
+              potrebi preuzeti nove poruke. </p>
+
+            <img src="../images/linux/06.png" alt="thunderbird">
+            <p class="slika-detalji">
+              Figure 6: Funkcionalan mejl klijent.</p>
+            <h4 id="Instaliranje Enigmail-a">4. Instaliranje Enigmail-a</h4>
+            <p class="tutorial-text">
+              Sada je potrebno da generišemo ključeve za našu mejl adresu.
+            </p>
+            <p class="tutorial-text">
+              To možemo uraditi i iz terminala koristeći GPG, ali je za početnike bolje da to urade kroz Thunderbird-ov
+              dodatak
+              Enigmail.
+            </p>
+            <img src="../images/linux/07.png" alt="thunderbird">
+            <p class="slika-detalji">
+              Figure 7: Da bi instalirali Enigmail potrebo je da u Thunderbird-u izaberete opciju za dodatke (eng.
+              Add-ons).</p>
+            <img src="../images/linux/08.png" alt="thunderbird">
+            <p class="slika-detalji">
+              Figure 8: U polju za pretragu dodataka unesite "Enigmail".</p>
+
+            <img src="../images/linux/09.png" alt="thunderbird">
+            <p class="slika-detalji">
+              Figure 9: Instalirajte najnoviju verziju Enigmail-a i restartujte Thunderbird.</p>
+
+            <h4 id="Kreiranje ključeva kroz Enigmail">5. Kreiranje ključeva kroz Enigmail</h4>
+
+            <img src="../images/linux/10.png" alt="enigmnail">
+            <p class="slika-detalji">
+              Figure 10: Kada se Enigmail
+              restartuje, automatski će se pokrenuti čarobnjak (eng. Wizard). Ukoliko
+              se sam ne pokrene možete ga i ručno pokrenuti iz Opcije
+              "Enigmail">"Setup Wizard"</p>
+
+
+            <img src="../images/linux/11.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 11: Najbolje je izabratni standardni način konfiguracije prilagođen početnicima.</p>
+
+            <img src="../images/linux/12.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 12: Pitaće vas za šifru
+              kojom će te pristupati tajnom kljuˇvu za vašu mejl adresu. Ukoliko imate
+              više ličnih mejl adresa u Thunderbird-u, odaberite za koju kreirate
+              ključeve.</p>
+
+
+            <p class="tutorial-text">
+              Šifra za tajni (negde se zove i privatni) ključ je samo još jedan sigurnosni mehanizam namenjen da samo
+              pravoj osobi
+              odobri upotrebu najkritičnijih upotreba tajnog ključa kao što su digitalno potpisivanje i dešifrovanje
+              pristigle pošte.
+            </p>
+            <p class="tutorial-text">
+
+              Šifra je takođe od velike važnosti jer u slučaju da izgubite tajni ključ, a ukoliko je šifra bila dovoljno
+              jaka, niko ko
+              dođe u posed vašegg tajnog ključa neće moći da ga upotrebi bez znanja vaše tajne šifre.
+            </p>
+            <p class="tutorial-text">
+              Mi smo u našem primeru odabrali dosta dugačku šifru od 19 karaktera što nikako nije preterivanje ukoliko
+              predhodno
+              nemate iskusva u sigurnom skladištenju i prenosu tajnih GPG ključeva.
+            </p>
+
+            <img src="../images/linux/13.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 13: Pošto unesete sigurnu
+              šifru, počeće proces generisanja ključa kome je potrebno dosta
+              entropije. Kako bi ste obezbedili entropiju i ubrzali proces, aktivno
+              pretražujte internet, mrdajte miša, kuckajte po tastaturi, ...
+              Proces pože potrajati, pa je važno imati strpljenje i ne prekidati program.</p>
+
+            <img src="../images/linux/14.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 14:Kada se proces završi
+              ponudiće vam da sačuvate sertifikat za opoziv ključa. To obavezno
+              prihvatite i sačuvajte sertifikat.</p>
+
+            <p class="tutorial-text">
+              Sertifikat za opoziv (eng. Revocation
+              Certificate) se koristi u slučaju da izgubite tajni ključ ili da ne
+              možete da se setite šifre za pristup tajnom ključu.
+            </p>
+            <p class="tutorial-text">
+
+              U tom slučaju Enigmail ili GPG programu
+              prosleđujete ovaj sertifikat koji na server javnih ključeva (eng. Public
+              Key Server) šalje informaciju o opozivu ključa i nevalidnosti istog za
+              dalju upotrebu.
+            </p>
+            <p class="tutorial-text">
+              Ta informacija je od značaja svima koji
+              žele da šifrovane poruke šalju vama da ne koriste opozvani ključ jer
+              nećete moći da ih dešifrujete.
+            </p>
+            <p class="tutorial-text">
+              Ukoliko vam program ne ponudi da sačuvate sertifikat za opoziv, to možete i naknadno uraditi iz programa.
+            </p>
+
+            <img src="../images/linux/15.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 15: Pitaće vas za šifru kojom pristupate vašem tajnom GPG ključu.</p>
+
+
+            <img src="../images/linux/16.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 16: Sačuvajte sertifikat za opiziv.</p>
+
+            <img src="../images/linux/17.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 17: Sačuvajte sertifikat i na nekom spoljnom medijumu kako bi ste imali rezervnu kopiju.</p>
+
+            <img src="../images/linux/18.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 18: Završilismosagenerisanjemključeva i sertifikata.</p>
+
+            <img src="../images/linux/19.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 19: Kraj.</p>
+
+
+            <h4 id="Objavljivanje vašeg javnog ključa">6.Objavljivanje vašeg javnog ključa</h4>
+
+            <p class="tutorial-text">
+              Sada kada ste napravili vaš GPG par ključeva, potrebno ja da objavite vaš javni ključ na nekom od servera
+              javnih ključeva.
+              Kako bi svako ko zna vašu mejl adresu mogao da proveri na serveru javnih ključeva GPG ključ koji odgovara
+              vašoj mejl adresi i koristi ga kako bi vam poslao šifrovanu poštu.
+            </p>
+
+            <img src="../images/linux/20.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 20: Kako bi otpremili naš javni ključ, treba da odemo u "Enigmail > Key Management".</p>
+
+            <img src="../images/linux/21.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 21: Menadžer ključeva u Enigmail-u.</p>
+
+            <img src="../images/linux/22.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 22: Desni klik na ključ i odaberete opciju "Upload Public keys to Keyserver".</p>
+
+            <img src="../images/linux/23.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 23: Sačekajte da se ključ pošalje.</p>
+
+
+            <h4 id="Saznajte na koji server ste poslali ključ:">6.1 Saznajte na koji server ste poslali ključ:</h4>
+
+            <p class="tutorial-text">
+              Sada se vaš javni ključ nalazi na nekom
+              od servera na koji ste ga poslali. Kako bi saznali adresu servera na
+              koji je vaš ključ poslat možete videti otić u "Enigmail >
+              "Preferences".</p>
+            <p class="tutorial-text">
+              Onda u "Basic" tabu kliknuti na "Display ExpertSettings and Menus", i zatim otići u "Keyserver" tab.
+            </p>
+
+            <img src="../images/linux/24.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 24: "Display Expert Settings and Menus"</p>
+
+            <img src="../images/linux/25.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 25: U "Keyserver" tabu su najverovatnije podešeni serveri: pool.sks-keyservers.net, keys.gnupg.net,
+              pgp.mit.edu.</p>
+
+
+            <h4 id="Proverite gde je ključ iz internet pretraživača">6.2 Proverite gde je ključ iz internet pretraživača
+            </h4>
+
+            <p class="tutorial-text">
+              Da bi ste se uverili da je ključ poslat
+              i da se zaista nalazi na pomenutim serverima, možete iz vašeg internet pretraživača posetiti stranice
+              pgp.mit.edu ili
+              sks-keyservers.net i u
+              polja za pretragu uneti vašu mejl adresu za koju ste upavo generisali
+              ključeve.</p>
+
+            <img src="../images/linux/26.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 26: Pretraga pgp.mit.edu servera javnih ključeva.</p>
+
+            <img src="../images/linux/27.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 27: retraga sks-keyservers.net servera javnih ključeva.</p>
+
+
+            <h4 id="Razmena šifrovanih poruka">7. Razmena šifrovanih poruka
+            </h4>
+
+            <p class="tutorial-text">
+              Da bi ste poslali nekome šifrovanu poruku morate imati njegov javni ključ.
+              Kako bi ste nabavili nečiji javniključ, trebate otići ponovo u "Enigmail > Key Management", pa kliknite na
+              "Keyserver >
+              Search for Keys", i zatim unesite mejl adresu osobe kojoj želite poslati šifrovanu elektronsku poruštu.
+            </p>
+
+            <img src="../images/linux/28.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 28: "Enigmail > Key Management" > "Keyserver > Search for Keys".</p>
+
+
+            <img src="../images/linux/29.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 29: Unesite mejl adresu osobe kojoj želite poslati šifrovanu elektronsku poruštu..</p>
+
+
+            <img src="../images/linux/30.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 30: Ako na serveru postoji željeni ključ jednostavno ga označite i uvezite u Enigmail.</p>
+
+            <p class="tutorial-text">
+              Ukoliko željeni ključ ne postoji to
+              može biti ili zato što nije napravljen i/ili poslat na server, ili je
+              ključ napravljen i poslat na neki server, samo se nije sinhronizovao sa serverom na kojem ga vi tražite.
+            </p>
+            <p class="tutorial-text">
+              U tom slučaju treba sačekati nekoliko minuta da bi se ključ našao na svim javnim serverima javnih GPG
+              ključeva.
+            </p>
+            <p class="tutorial-text">
+
+              Takođe se može desiti da pretraživanjem za unetu adresu kontakta dobijete više ponuđenih GPG ključeva.
+            </p>
+            <p class="tutorial-text">
+              U tom slučaju se treba obratiti kontaktu za informaciju o aktuelnom važećem ključu.
+            </p>
+
+            <img src="../images/linux/31.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 31: Po preuzimanju
+              željenog javnog ključa biće prikazana poruka o uspešnom preuzimanju kao i jedinstveni otisak (eng.
+              Fingerprint)
+              preuzetog ključa..</p>
+
+            <img src="../images/linux/32.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 32: Po preuzimanju
+              ključa vašeg kontakta, njegov ključ će se takođe pojaviti u vašoj
+              lokalnoj bazi GPG ključeva unutar Enigmail-a.</p>
+
+            <h4 id="Slanje šifrovanih mejlova">7.1. Slanje šifrovanih mejlova
+            </h4>
+
+
+            <p class="tutorial-text">
+              Sada kada imate vaš par GPG
+              ključeva, kao i javni ključ kontakta kome želite poslati privatnu
+              šifrovanu poruku, sve što treba da radite jeste da sastavite poruku i
+              unesete mejl adresu kontakta čiji javni GPG ključ imate.</p>
+            <p class="tutorial-text">
+              Nakon sastavljanja poruke
+              štiklirajte ikoniće ključa i olovke kako bi ste sastavljenu poruku
+              šifrovali i digitalno potpisali pre nego što je pošaljete.
+            </p>
+            <img src="../images/linux/33.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 33: Štiklirajte ikoniće ključa i olovke
+            </p>
+
+
+            <h4 id="Primanje šifrovanih mejlova">7.2. Primanje šifrovanih mejlova
+            </h4>
+            <p class="tutorial-text">
+              Predpostavljajući da već imate
+              javni kljuć pošiljaoca, primljenu šifrovanu poruku Enigmail će
+              prepoznati i ponuditi daje dešifrujete.</p>
+            <img src="../images/linux/34.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 34: Pristigla šifrovana poruka.
+            </p>
+
+            <img src="../images/linux/35.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 35: Kada kliknete
+              na primljenu poruku, pojaviće se prozor za unos šifre za pristup
+              vašemtajnom ključu kako biste dešifrovali primljenu poruku. Unesite vašu GPG šifru.
+            </p>
+
+            <img src="../images/linux/36.png" alt="enigmail">
+            <p class="slika-detalji">
+              Figure 36: Dešifrovana poruka.
+            </p>
+
+            <a href="linux-gpg-dodatak.html">dodatni materijal</a>
+          </div>
+        </div>
+
+
+
+
+        <!-- <div class="flex-1 flex flex-col h-full">
+          <h3 class="tut-title">Linuks | Objasnjenje</h3>
+
+          <div class="w-full tut-text-container h-full overflow-scroll ">
+            <h4>Uvod</h4>
+            <p class="tutorial-text">
+
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+              magni, assumenda cum nostrum hic iusto itaque qui saepe nobis sapiente nulla doloremque libero quisquam
+              fugiat, porro doloribus sit id omnis?</p>
+          </div>
+        </div> -->
+      </div>
+    </section>
+    <!-- main section end -->
+    <footer class="footer w-full text-center py-2">
+      Copyleft &copy; cryptoparty.rs 2022
+    </footer>
+  </div>
+</body>
+
+</html>
